@@ -7,6 +7,7 @@ public class Homework8 {
     public static void task1() {
         Author authorTolstoy = new Author("Лев", "Толстой");
         Author authorDostoevsky = new Author("Федор", "Достоевский");
+        Author authorTolstoyA = new Author("Алексей", "Толстой");
 
         Book bookNameTolstoy = new Book("Война и мир", authorTolstoy, 1867);
         System.out.println("Название книги - " + bookNameTolstoy.getBookName() + " автор - " +
@@ -20,5 +21,14 @@ public class Homework8 {
 
         bookNameTolstoy.setPublishingYear(1868);
         System.out.println("Год публикации книги - " + bookNameTolstoy.getPublishingYear());
+
+        Book bookNameTolstoyA = new Book("Аэлита", authorTolstoyA, 1928);
+        Book bookNameDostoevsky1 = new Book("Преступление и наказание", authorDostoevsky, 1986);
+
+        System.out.println(bookNameTolstoy);
+        System.out.println(authorTolstoy);
+        System.out.println(authorTolstoy.equals(authorTolstoyA));
+        System.out.println(bookNameTolstoy.equals(bookNameTolstoyA));
+        System.out.println(bookNameDostoevsky.equals(bookNameDostoevsky1));
     }
 }

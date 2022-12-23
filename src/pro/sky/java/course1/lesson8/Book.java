@@ -26,24 +26,22 @@ public class Book {
     }
 
     @Override
-    public String toString() {
-        return "Book{" +
-                "bookName='" + bookName + '\'' +
-                ", authorName=" + authorName.toString() +
-                ", publishingYear=" + publishingYear +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return bookName.equals(book.bookName);
+        return bookName.equals(book.bookName) && authorName.equals(book.authorName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bookName);
+        return Objects.hash(bookName, authorName);
     }
+
+    @Override
+    public String toString() {
+        return "Название книги - " + bookName + ", автор - " + authorName.toString() +
+                ", год публикации - " + publishingYear;
+    }
+
 }
